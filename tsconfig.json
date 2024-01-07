@@ -6,7 +6,7 @@
         "sourceMap": true,
         "esModuleInterop": true,
         "experimentalDecorators": true,
-        "types": [],
+        "types": ["node"],
         "skipLibCheck": true,
         "moduleResolution": "node",
         "isolatedModules": false,

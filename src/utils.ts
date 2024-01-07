@@ -146,7 +146,7 @@ export function deepCompare<T>(a: T, b: T, strict?: boolean, depth = 10, numberD
     }
 
     // handle dates
-    if (a instanceof Date || b instanceof Date || moment.isMoment(a) || moment.isMoment(b)) {
+    if ((a as any) instanceof Date || (b as any) instanceof Date || moment.isMoment(a) || moment.isMoment(b)) {
         const am = moment(a);
         const bm = moment(b);
         if (am.isValid() !== bm.isValid()) {
