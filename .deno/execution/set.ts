@@ -1,11 +1,11 @@
 import { _IStatementExecutor, _Transaction, StatementResult, GLOBAL_VARS, QueryError } from '../interfaces-private.ts';
-import { SetGlobalStatement, SetTimezone } from 'https://deno.land/x/pgsql_ast_parser@11.0.1/mod.ts';
+import { SetGlobalStatement, SetTimezone, SetNamesStatement } from 'https://deno.land/x/pgsql_ast_parser@/projects/pgsql-ast-parser/lib/mod.ts';
 import { ignore } from '../utils.ts';
 import { ExecHelper } from './exec-utils.ts';
 
 export class SetExecutor extends ExecHelper implements _IStatementExecutor {
 
-    constructor(private p: SetGlobalStatement | SetTimezone) {
+    constructor(private p: SetGlobalStatement | SetTimezone | SetNamesStatement) {
         super(p);
         // todo handle set statements timezone ?
         // They are just ignored as of today (in order to handle pg_dump exports)
